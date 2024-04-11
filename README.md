@@ -45,11 +45,11 @@ graph TD;
 
 使用腾讯地图的API，开启配额后填入key即可。 程序运行完后，`community_name_map.csv`得到了`community_name_map_updated_oringal.csv`
 
-![image-20240401145744009](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240401145744009.png)
+![image-20240401145744009](pic/01.png)
 
 程序运行后，显示大致如下
 
-![image-20240401151358208](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240401151358208.png)
+![image-20240401151358208](pic/02.png)
 
 ### 爬取交易数据
 
@@ -67,21 +67,21 @@ graph TD;
 
 以`太和广场`为例，在[经纬度查询平台](https://lbs.amap.com/tools/picker)上查询，可以发现腾讯API查询得到的经纬度地址存在一定的问题
 
-![image-20240404101634980](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240404101634980.png)
+![image-20240404101634980](pic/03.png)
 
 ### 数据清洗
 
 通过绘制后还是发现有些区域超出了杭州市区，这些点应该是查询有问题
 
-![image-20240404121727096](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240404121727096.png)
+![image-20240404121727096](pic/04.png)
 
 把过于偏西的重新检查去除后发现还有一些点在钱塘江南
 
-![image-20240404122710296](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240404122710296.png)
+![image-20240404122710296](pic/05.png)
 
 删除异常点后得到
 
-![image-20240404182851274](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240404182851274.png)
+![image-20240404182851274](pic/06.png)
 
 使用`stats.py`对数据（综合`resultv2.csv`和`community_name_map_new_gaodev2.csv`）进行统计，最后得到了`stats.csv`文件，其格式为如下
 
